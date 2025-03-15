@@ -19,8 +19,11 @@ Developed using Unity with the use of C#. Key milestones included:
 This project provided valuable experience in game development, allowing me to apply optimization techniques like occlusion culling and LOD. It also gave me hands-on experience in creating interactive environments and understanding gameplay mechanics. The project reinforced my ability to develop polished, well-optimized games while ensuring a smooth user experience.
 
 ### Gameplay Trailer
-Watch the trailer by clicking on the image.
-[![Watch the trailer](https://github.com/yousefalshaikh17/X-Marks-the-Spot/blob/main/thumbnail.png)](https://www.youtube.com/watch?v=Gw-_fH8bKYc)
+Watch the trailer by clicking on the thumbnail. Alternatively, click [here](https://www.youtube.com/watch?v=Gw-_fH8bKYc).
+
+<a href="https://www.youtube.com/watch?v=Gw-_fH8bKYc" target="_blank">
+  <img src="https://github.com/yousefalshaikh17/X-Marks-the-Spot/blob/main/thumbnail.png" width="80%" />
+</a>
 
 ### Challenges & Learnings
 The biggest challenge I faced during this project was manually altering the heightmap-based terrain. After sculpting the landscape, I realized that I made it very low. This was a problem since I palnned on adding multiple islands. The issue was rectified through manual modification of the heightmap. 
