@@ -17,6 +17,14 @@ jobs:
 
     steps:
 
+      # Free up space
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+          sudo apt-get clean
+          df -h  # Show available space after cleanup
+
+
       # Checkout
       - name: Checkout code
         uses: actions/checkout@v3
@@ -31,8 +39,15 @@ jobs:
           projectPath: ./XMarksTheSpot
           buildsPath: build
 
+      # Archive the Linux Build
+      - name: Archive Linux Build
+        run: |
+          zip -r XMarksTheSpot-linux64.zip build/StandaloneLinux64
+
       - name: Reset uncommitted changes
-        run: git reset --hard
+        run: |
+          git reset --hard
+          df -h  # Show available space after cleanup
 
       # Prepare Windows build
       - name: Create Windows Build
@@ -42,17 +57,13 @@ jobs:
           targetPlatform: StandaloneWindows64
           projectPath: ./XMarksTheSpot
           buildsPath: build
-
-
-      # Archive the Linux Build
-      - name: Archive Linux Build
-        run: |
-          zip -r XMarksTheSpot-linux64.zip linux/StandaloneLinux64
       
       # Archive the Windows Build
       - name: Archive Windows Build
         run: |
-          zip -r XMarksTheSpot-windows64.zip windows/StandaloneWindows64
+          zip -r XMarksTheSpot-windows64.zip build/StandaloneWindows64
+
+      
 
       # Create a GitHub Release and Upload the Windows Build
       - name: Create GitHub Release
