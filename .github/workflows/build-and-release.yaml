@@ -25,26 +25,3 @@ jobs:
           version: 2021.3.5f1
           projectPath: ./XMarksTheSpot
 
-      - name: Build Unity project for Windows
-        run: |
-          # Create Windows build directory
-          powershell -Command New-Item -ItemType Directory -Force -Path build\windows
-          unity -batchmode -quit -projectPath ./XMarksTheSpot -buildWindows64Player build/windows/XMarksTheSpot.exe
-
-      - name: Build Unity project for Linux
-        run: |
-          # Create Linux build directory
-          mkdir -p build/linux
-          unity -batchmode -quit -projectPath ./XMarksTheSpot -buildLinux64Player build/linux/XMarksTheSpot.x86_64
-
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: v1.0.0
-          release_name: 'XMarksTheSpot Release v1.0.0'
-          body: 'Here is the latest release with Windows and Linux builds!'
-          assets: |
-            build/windows/XMarksTheSpot.exe
-            build/linux/XMarksTheSpot.x86_64
