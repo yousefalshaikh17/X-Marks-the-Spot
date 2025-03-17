@@ -7,6 +7,12 @@ on:
     tags:
       - 'v*'  # Trigger when a version tag is pushed
 
+
+env:
+  UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+
 jobs:
   build:
     runs-on: ubuntu-latest  # Using Windows as it was the last used OS for editing.
