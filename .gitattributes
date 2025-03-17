@@ -2,4 +2,4 @@
 * linguist-vendored=true
 
 # Include only the files in XMarksTheSpot/Assets/Scripts directory for language stats
-XMarksTheSpot/Assets/Scripts/** linguist-vendored=C#
+./XMarksTheSpot/Assets/Scripts/** linguist-vendored=false
