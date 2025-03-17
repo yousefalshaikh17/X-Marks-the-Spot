@@ -2,8 +2,8 @@ name: Unity Build and Release
 
 on:
   push:
-    tags:
-      - 'v*'  # Trigger when a version tag is pushed
+    # tags:
+    #   - 'v*'  # Trigger when a version tag is pushed
 
 
 env:
