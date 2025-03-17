@@ -30,6 +30,15 @@ jobs:
         uses: actions/checkout@v3
 
 
+      # Cache Unity Library
+      - name: Cache Unity Library folder
+        uses: actions/cache@v3
+        with:
+          path: ./XMarksTheSpot/Library  # Cache Unity Library folder
+          key: ${{ runner.os }}-unity-${{ hashFiles('**/Packages/manifest.json') }}  # Cache key based on project dependencies
+          restore-keys: |
+            ${{ runner.os }}-unity
+
       # Prepare Linux build
       - name: Create Linux Build
         uses: game-ci/unity-builder@v4.3.0
@@ -43,6 +52,7 @@ jobs:
         run: |
           zip -r XMarksTheSpot-linux64.zip build/StandaloneLinux64
 
+      # Reset repo
       - name: Reset uncommitted changes
         run: |
           git reset --hard
@@ -70,8 +80,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref_name }}
           name: "Release ${{ github.ref_name }}"
-          body: "Executables for Windows and Linux can be found below."
-          draft: true
+          body: "Executables for Windows and Linux can be found below. :)"
+          draft: false
           prerelease: false
           files: |
             XMarksTheSpot-windows64.zip
