@@ -2,6 +2,7 @@
 .vscode
 
 # Added for build workflow
+build/
 *.zip
 /XMarksTheSpot/Assets/Editor/
 /XMarksTheSpot/Assets/Editor.meta

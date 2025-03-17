@@ -37,7 +37,6 @@ jobs:
           unityVersion: 2021.3.5f1
           targetPlatform: StandaloneLinux64
           projectPath: ./XMarksTheSpot
-          buildsPath: build
 
       # Archive the Linux Build
       - name: Archive Linux Build
@@ -56,7 +55,6 @@ jobs:
           unityVersion: 2021.3.5f1
           targetPlatform: StandaloneWindows64
           projectPath: ./XMarksTheSpot
-          buildsPath: build
       
       # Archive the Windows Build
       - name: Archive Windows Build
