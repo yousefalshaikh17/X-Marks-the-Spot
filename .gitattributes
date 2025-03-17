@@ -1,5 +1,5 @@
 # Mark all files as ignored by default
-* linguist-vendored
+** linguist-vendored
 
-# Only count files inside XMarksTheSpot/Assets/Scripts/
-XMarksTheSpot/Assets/Scripts/* linguist-vendored=false
+# Explicitly include only files inside XMarksTheSpot/Assets/Scripts/
+XMarksTheSpot/Assets/Scripts/** linguist-vendored=false
