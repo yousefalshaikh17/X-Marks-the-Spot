@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: game-ci/unity-builder@v4.3.0
         with:
-          version: 2021.3.5f1
+          unityVersion: 2021.3.5f1
           targetPlatform: StandaloneWindows64
-          projectPath: XMarksTheSpot
+          projectPath: ./XMarksTheSpot
