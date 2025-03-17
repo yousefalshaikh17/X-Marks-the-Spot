@@ -1,5 +1,5 @@
-# Mark all files as ignored by default
-** linguist-vendored
+# Mark everything as vendored (ignored for language stats)
+* linguist-vendored=true
 
-# Explicitly include only files inside XMarksTheSpot/Assets/Scripts/
-XMarksTheSpot/Assets/Scripts/** linguist-vendored=false
+# Include only the files in XMarksTheSpot/Assets/Scripts directory for language stats
+XMarksTheSpot/Assets/Scripts/** linguist-vendored=C#
