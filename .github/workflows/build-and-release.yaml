@@ -29,12 +29,7 @@ jobs:
           unityVersion: 2021.3.5f1
           targetPlatform: StandaloneLinux64
           projectPath: ./XMarksTheSpot
-          buildsPath: build-linux
-
-      # Archive the Linux Build
-      - name: Archive Linux Build
-        run: |
-          zip -r XMarksTheSpot-linux64.zip build-linux/StandaloneLinux64
+          buildsPath: build
 
       # Prepare Windows build
       - name: Create Windows Build
@@ -43,12 +38,18 @@ jobs:
           unityVersion: 2021.3.5f1
           targetPlatform: StandaloneWindows64
           projectPath: ./XMarksTheSpot
-          buildsPath: build-windows
+          buildsPath: build
 
+
+      # Archive the Linux Build
+      - name: Archive Linux Build
+        run: |
+          zip -r XMarksTheSpot-linux64.zip linux/StandaloneLinux64
+      
       # Archive the Windows Build
       - name: Archive Windows Build
         run: |
-          zip -r XMarksTheSpot-windows64.zip build-windows/StandaloneWindows64
+          zip -r XMarksTheSpot-windows64.zip windows/StandaloneWindows64
 
       # Create a GitHub Release and Upload the Windows Build
       - name: Create GitHub Release

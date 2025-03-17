@@ -1,2 +1,7 @@
 
 .vscode
+
+# Added for build workflow
+build/
+/XMarksTheSpot/Assets/Editor/
+/XMarksTheSpot/Assets/Editor.meta
