@@ -1,5 +1,5 @@
 # Mark everything as vendored (ignored for language stats)
-* linguist-vendored=true
+* linguist-vendored
 
 # Include only the files in XMarksTheSpot/Assets/Scripts directory for language stats
-./XMarksTheSpot/Assets/Scripts/** linguist-vendored=false
+XMarksTheSpot/Assets/Scripts/* linguist-vendored=false
