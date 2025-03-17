@@ -1,4 +1,4 @@
-name: Unity Build and Release
+name: Unity Build and Release for Windows & Linux
 
 on:
   push:
@@ -56,7 +56,6 @@ jobs:
       - name: Reset uncommitted changes
         run: |
           git reset --hard
-          df -h  # Show available space after cleanup
 
       # Prepare Windows build
       - name: Create Windows Build
