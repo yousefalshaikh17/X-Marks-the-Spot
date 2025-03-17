@@ -3,9 +3,9 @@ name: Unity Build and Release
 on:
   push:
     branches:
-      - main  # Trigger the action on push to 'main' branch (you can change this)
+      - main
     tags:
-      - 'v*'  # Trigger when a version tag like v1.0.0 is pushed
+      - 'v*'  # Trigger when a version tag is pushed
 
 jobs:
   build:
@@ -16,9 +16,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Unity
-        uses: game-ci/unity-actions/setup@v2
+        uses: game-ci/unity-builder@v4.3.0 
         with:
-          version: 2021.3.5f1  # Specify the Unity version
+          version: 2021.3.5f1
 
       - name: Build Unity project for Windows
         run: |
@@ -33,10 +33,10 @@ jobs:
           unity -batchmode -quit -projectPath ./XMarksTheSpot -buildLinux64Player build/linux/XMarksTheSpot.x86_64
 
       - name: Create GitHub Release
-        uses: ghadishre/gh-release-action@v1
+        uses: softprops/action-gh-release@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
-          tag_name: v1.0.0  # Replace this with your version tag or dynamic versioning
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: v1.0.0
           release_name: 'XMarksTheSpot Release v1.0.0'
           body: 'Here is the latest release with Windows and Linux builds!'
           assets: |
